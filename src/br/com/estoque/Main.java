@@ -40,10 +40,55 @@ public class Main {
                 10
         );
 
+        Produto p5 = new Produto(
+                5,
+                "Headset",
+                250.00,
+                "Periféricos",
+                15
+        );
+
+        Produto p6 = new Produto(
+                6,
+                "Webcam",
+                320.00,
+                "Periféricos",
+                8
+        );
+
+        Produto p7 = new Produto(
+                7,
+                "SSD 1TB",
+                450.00,
+                "Hardware",
+                12
+        );
+
+        Produto p8 = new Produto(
+                8,
+                "Placa de vídeo",
+                1800.00,
+                "Hardware",
+                4
+        );
+
+        Produto p9 = new Produto(
+                9,
+                "Monitor 24 polegadas",
+                1100.00,
+                "Monitores",
+                6
+        );
+
         service.adicionar(p1);
         service.adicionar(p2);
         service.adicionar(p3);
         service.adicionar(p4);
+        service.adicionar(p5);
+        service.adicionar(p6);
+        service.adicionar(p7);
+        service.adicionar(p8);
+        service.adicionar(p9);
 
         System.out.println(service.listarCategorias());
         Produto produto = service.buscarPorIdMap(2);
@@ -51,6 +96,12 @@ public class Main {
 
 
         service.ordenarPorPreco()
+                .forEach(System.out::println);
+
+        System.out.println("");
+        System.out.println("");
+
+        service.ordenarPorPrecoDesc()
                 .forEach(System.out::println);
     }
 }

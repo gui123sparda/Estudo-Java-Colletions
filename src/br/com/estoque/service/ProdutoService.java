@@ -17,6 +17,15 @@ public class ProdutoService {
                 .toList();
     }
 
+    public List<Produto> ordenarPorPrecoDesc(){
+        return produtos.stream()
+                .sorted(
+                        Comparator.comparing(Produto::getPreco)
+                                .reversed()
+                )
+                .toList();
+    }
+
     public void adicionar(Produto produto){
         produtos.add(produto);
 
