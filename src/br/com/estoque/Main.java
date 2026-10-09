@@ -48,6 +48,9 @@ public class Main {
         System.out.println(service.listarCategorias());
         Produto produto = service.buscarPorIdMap(2);
 
-        System.out.println(produto);
+
+
+        service.ordenarPorPreco()
+                .forEach(System.out::println);
     }
 }

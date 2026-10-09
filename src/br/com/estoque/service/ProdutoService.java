@@ -11,6 +11,12 @@ public class ProdutoService {
 
     private final Map<Integer,Produto> produtosPorId = new HashMap<>();
 
+    public List<Produto> ordenarPorPreco(){
+        return produtos.stream()
+                .sorted(Comparator.comparing(Produto::getPreco))
+                .toList();
+    }
+
     public void adicionar(Produto produto){
         produtos.add(produto);
 
