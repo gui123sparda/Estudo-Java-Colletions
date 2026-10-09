@@ -6,7 +6,7 @@ import br.com.estoque.service.ProdutoService;
 public class Main {
     public static void main(String[] args) {
 
-        ProdutoService produtoService = new ProdutoService();
+        ProdutoService service = new ProdutoService();
 
         Produto p1 = new Produto(
                 1,
@@ -40,11 +40,14 @@ public class Main {
                 10
         );
 
-        produtoService.adicionar(p1);
-        produtoService.adicionar(p2);
-        produtoService.adicionar(p3);
-        produtoService.adicionar(p4);
+        service.adicionar(p1);
+        service.adicionar(p2);
+        service.adicionar(p3);
+        service.adicionar(p4);
 
-        System.out.println(produtoService.listarCategorias());
+        System.out.println(service.listarCategorias());
+        Produto produto = service.buscarPorIdMap(2);
+
+        System.out.println(produto);
     }
 }

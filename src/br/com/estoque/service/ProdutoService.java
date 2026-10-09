@@ -2,22 +2,26 @@ package br.com.estoque.service;
 
 import br.com.estoque.model.Produto;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.*;
 
 public class ProdutoService {
     private final List<Produto> produtos =new ArrayList<>();
 
     private final Set<String> categorias = new HashSet<>();
 
+    private final Map<Integer,Produto> produtosPorId = new HashMap<>();
 
     public void adicionar(Produto produto){
         produtos.add(produto);
+
         categorias.add(produto.getCategoria());
+
+        produtosPorId.put(produto.getId(), produto);
     }
 
+    public Produto buscarPorIdMap(Integer id){
+        return produtosPorId.get(id);
+    }
     public List<Produto> listar(){
         return produtos;
     }
